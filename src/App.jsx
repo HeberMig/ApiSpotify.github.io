@@ -102,7 +102,7 @@ function App() {
 
   //Función para buscar información del artista
   async function search(artistName) {
-    /**/
+    
     if (!artistName.trim()) {
       // Mostrar un alerta con SweetAlert2
       Swal.fire({
@@ -114,7 +114,7 @@ function App() {
       return; // Salir de la función si el campo está vacío
     }
     
-    /**/
+    
     
     let artistParameters = {
       method: "GET",
@@ -173,7 +173,7 @@ function App() {
       .then((data) => {
         console.log(data);
         setTracks(data.items);
-        /**/
+        
         // Construir el mensaje con el nombre del álbum y sus canciones
       let message = "<strong>Álbum:</strong> " + albumName + "<br><br>";
       message += "<strong>Canciones:</strong><br>";
@@ -183,7 +183,7 @@ function App() {
         message += (index + 1) + ". " + track.name + "<br>";
       });
         //Mostrar Una ventana emergente con sweetAlert2
-        /**/
+        
         
         
         Swal.fire({
@@ -192,11 +192,11 @@ function App() {
           html: message,
           icon: 'success',
           confirmButtonText: 'Ok',
-          /**/
+          //f
           onAfterClose: () => {
             // Abrir el enlace al preview de la primera canción del álbum
             window.open(preview);
-          }/**/
+          }//f
         });
       })
       .catch((error) => {
@@ -209,7 +209,7 @@ function App() {
           confirmButtonText: 'Ok'
         });
         
-        /**/
+        
         //Fin de Mostrar
       });
   }
@@ -254,7 +254,7 @@ function App() {
           songName={track.name}
           preview={track.external_urls.spotify}
           searchAlbum={searchAlbum}//Pasar la funcion searchAlbum como prop
-          /**/
+          
           key={index}
         />
       ))}
@@ -264,8 +264,7 @@ function App() {
       />
     </>
   )}
-  /**/
-  /**/
+  
 </StyledTracks>
           </div>
         )}
