@@ -253,8 +253,6 @@ function App() {
         <AlbumData
           songName={track.name}
           preview={track.external_urls.spotify}
-          /**/
-          /**/
           searchAlbum={searchAlbum}//Pasar la funcion searchAlbum como prop
           /**/
           key={index}
